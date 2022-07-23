@@ -1,0 +1,75 @@
+.login-background{
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(95,214,216,1) 0%, rgba(231,56,244,1) 100%);
+    
+    .login-container{
+        background-color: white;
+        margin: 0 auto;
+        width: 35%;
+        height: 100%;
+        border-radius: 20px;
+
+        .login-content{
+            padding: 10px;
+
+            .login-text{
+                font-size: 30px;
+                font-weight: 600;
+                padding-top: 20px;
+                text-align: center;
+            }
+
+            .input-login{
+                margin: 10px 0;
+            }
+
+            .btn-login{
+                width: 100%;
+                margin: 10px 0;
+                height: 28px;
+                border-radius: 3px;
+                border: 0;
+                outline: none;
+                color: white;
+                font-size: 20px;
+                border-radius: 20px;
+                background: linear-gradient(90deg, rgba(95,214,216,1) 0%, rgba(231,56,244,1) 100%);
+            }
+
+            .forgot-password{
+                font-size: 13px;
+            }
+
+            .social-login{
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+
+                .facebook{
+                    font-size: 30px;
+                    background: rgb(108, 108, 246);
+                    border-radius: 50%;
+                    height: 50px;
+                    width: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    margin-right: 10px;
+                }
+
+                .google{
+                    font-size: 30px;
+                    background: rgb(241, 68, 68);
+                    border-radius: 50%;
+                    height: 50px;
+                    width: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                }
+            }
+        }
+    }
+}
