@@ -1,73 +1,90 @@
-.login-background{
-    height: 100vh;
-    background: linear-gradient(135deg, rgba(95,214,216,1) 0%, rgba(231,56,244,1) 100%);
-    
-    .login-container{
-        background-color: white;
-        margin: 0 auto;
-        width: 35%;
-        height: 100%;
-        border-radius: 20px;
+.login-background {
+    height    : 100vh;
+    background: linear-gradient(135deg, rgba(95, 214, 216, 1) 0%, rgba(231, 56, 244, 1) 100%);
 
-        .login-content{
+    .login-container {
+        background-color: white;
+        margin          : 0 auto;
+        width           : 300px;
+        height          : 450px;
+        border-radius   : 20px;
+        position        : absolute;
+        margin          : auto;
+        top             : 0;
+        right           : 0;
+        bottom          : 0;
+        left            : 0;
+
+        .login-content {
             padding: 10px;
 
-            .login-text{
-                font-size: 30px;
+            .login-text {
+                font-size  : 30px;
                 font-weight: 600;
                 padding-top: 20px;
-                text-align: center;
+                text-align : center;
             }
 
-            .input-login{
+            .input-login {
                 margin: 10px 0;
+
+                .custom-input-password {
+                    position: relative;
+
+                    i {
+                        position:absolute;
+                        right: 5px;
+                        top  : 10px;
+                        cursor: pointer;
+                    }
+                }
             }
 
-            .btn-login{
-                width: 100%;
-                margin: 10px 0;
-                height: 28px;
+            .btn-login {
+                width        : 100%;
+                margin       : 10px 0;
+                height       : 28px;
                 border-radius: 3px;
-                border: 0;
-                outline: none;
-                color: white;
-                font-size: 20px;
+                border       : 0;
+                outline      : none;
+                color        : white;
+                font-size    : 20px;
                 border-radius: 20px;
-                background: linear-gradient(90deg, rgba(95,214,216,1) 0%, rgba(231,56,244,1) 100%);
+                background   : linear-gradient(90deg, rgba(95, 214, 216, 1) 0%, rgba(231, 56, 244, 1) 100%);
             }
 
-            .forgot-password{
+            .forgot-password {
                 font-size: 13px;
             }
 
-            .social-login{
-                display: flex;
+            .social-login {
+                display        : flex;
                 justify-content: center;
-                margin-top: 10px;
+                margin-top     : 10px;
 
-                .facebook{
-                    font-size: 30px;
-                    background: rgb(108, 108, 246);
-                    border-radius: 50%;
-                    height: 50px;
-                    width: 50px;
-                    display: flex;
+                .facebook {
+                    font-size      : 30px;
+                    background     : rgb(108, 108, 246);
+                    border-radius  : 50%;
+                    height         : 50px;
+                    width          : 50px;
+                    display        : flex;
                     justify-content: center;
-                    align-items: center;
-                    color: white;
-                    margin-right: 10px;
+                    align-items    : center;
+                    color          : white;
+                    margin-right   : 10px;
                 }
 
-                .google{
-                    font-size: 30px;
-                    background: rgb(241, 68, 68);
-                    border-radius: 50%;
-                    height: 50px;
-                    width: 50px;
-                    display: flex;
+                .google {
+                    font-size      : 30px;
+                    background     : rgb(241, 68, 68);
+                    border-radius  : 50%;
+                    height         : 50px;
+                    width          : 50px;
+                    display        : flex;
                     justify-content: center;
-                    align-items: center;
-                    color: white;
+                    align-items    : center;
+                    color          : white;
                 }
             }
         }
