@@ -15,6 +15,7 @@ class Login extends Component {
       username: "",
       password: "",
       isShowPassword: false,
+      errMessage: "",
     };
   }
 
@@ -31,18 +32,28 @@ class Login extends Component {
   };
 
   handleLogin = async () => {
-    // alert('Success!!!')
-    console.log(
-      "username:",
-      this.state.username,
-      "password:",
-      this.state.password
-    );
-    console.log("allstate: ", this.state);
-    try{
-      await handleLoginApi(this.state.username,this.state.password);
-    }catch(e){
-      console.log(e)
+    this.setState({
+      errMessage: "",
+    });
+    try {
+      let data = await handleLoginApi(this.state.username, this.state.password);
+      if(data && data.errCode !== 0){
+        this.setState({
+          errMessage: data.message
+        });
+      }
+      if(data.errCode === 0){
+        console.log('Login success!!');
+      }
+    } catch (e) {
+      if (e.response) {
+        if (e.response.data) {
+          this.setState({
+            errMessage: e.response.data.message,
+          });
+        }
+      }
+      console.log(e.response);
     }
   };
 
@@ -87,9 +98,18 @@ class Login extends Component {
                     this.handleShowHiddenPassword();
                   }}
                 >
-                  <i class={this.state.isShowPassword ? 'fas fa-eye' : 'fas fa-eye-slash'}></i>
+                  <i
+                    class={
+                      this.state.isShowPassword
+                        ? "fas fa-eye"
+                        : "fas fa-eye-slash"
+                    }
+                  ></i>
                 </span>
               </div>
+            </div>
+            <div className="col-12" style={{ color: "red" }}>
+              {this.state.errMessage}
             </div>
             <div className="col-12">
               <button
