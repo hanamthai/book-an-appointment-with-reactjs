@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { push } from "connected-react-router";
 
 import * as actions from "../../store/actions";
+// import { userLoginSuccess } from "../../store/actions";
 
 import "./Login.scss";
 import { FormattedMessage } from "react-intl";
@@ -37,13 +38,14 @@ class Login extends Component {
     });
     try {
       let data = await handleLoginApi(this.state.username, this.state.password);
-      if(data && data.errCode !== 0){
+      if (data && data.errCode !== 0) {
         this.setState({
-          errMessage: data.message
+          errMessage: data.message,
         });
       }
-      if(data.errCode === 0){
-        console.log('Login success!!');
+      if (data && data.errCode === 0) {
+        this.props.userLoginSuccess(data.user);
+        console.log("Login success!!");
       }
     } catch (e) {
       if (e.response) {
@@ -147,9 +149,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     navigate: (path) => dispatch(push(path)),
-    adminLoginSuccess: (adminInfo) =>
-      dispatch(actions.adminLoginSuccess(adminInfo)),
-    adminLoginFail: () => dispatch(actions.adminLoginFail()),
+    // userLoginFail: () => dispatch(actions.adminLoginFail()),
+    userLoginSuccess: (userInfo) => dispatch(actions.userLoginSuccess(userInfo))
   };
 };
 
